@@ -2,9 +2,9 @@ package com.dmajd.pollenapi.entity;
 
 public class Pollen
 {
-    String name;
-    String date;
-    float value;
+    private String name;
+    private String date;
+    private float value;
 
     public Pollen()
     {

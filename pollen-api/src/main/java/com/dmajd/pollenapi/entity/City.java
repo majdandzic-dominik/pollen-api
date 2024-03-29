@@ -5,7 +5,18 @@ import java.util.List;
 
 public class City
 {
-    List<Pollen> pollenList;
+    private String name;
+    private List<Pollen> pollenList;
+
+    public String getName()
+    {
+        return name;
+    }
+
+    public void setName(String name)
+    {
+        this.name = name;
+    }
 
     public City()
     {
