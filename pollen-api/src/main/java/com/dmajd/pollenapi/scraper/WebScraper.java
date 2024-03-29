@@ -1,5 +1,7 @@
 package com.dmajd.pollenapi.scraper;
 
+import com.dmajd.pollenapi.entity.City;
+import com.dmajd.pollenapi.entity.Pollen;
 import org.jsoup.Jsoup;
 import org.jsoup.nodes.Document;
 import org.jsoup.nodes.Element;
@@ -15,20 +17,32 @@ public class WebScraper
     {
     }
 
-    public String getCityData()
+    public City getCityData()
     {
         try
         {
+            City city = new City();
+
             Document document = Jsoup.connect(url).get();
             Elements content = document
                     .getElementsByClass("peludSadrzaj")
                     .first().getElementsByClass("peludHolder");
-            return content.text();
+
+            for (Element pollenData : content)
+            {
+                Pollen tempPollen = new Pollen(
+                        pollenData.getElementsByClass("peludKategorija").text(),
+                        pollenData.getElementsByClass("peludStupacDatum").first().text(),
+                        Float.parseFloat(pollenData.getElementsByClass("peludStupacOcitanje ").first().text())
+                );
+                city.addPollen(tempPollen);
+            }
+            return city;
         }
-        catch (IOException e)
+        catch (IOException | NullPointerException e)
         {
             System.out.println(e.getMessage());
         }
-        return "HEHEXD";
+        return null;
     }
 }
