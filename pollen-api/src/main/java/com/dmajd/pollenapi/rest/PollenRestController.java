@@ -22,7 +22,7 @@ public class PollenRestController
     public City getCities(@PathVariable String cityName)
     {
         WebScraper scraper = WebScraper.getInstance();
-        return scraper.getCityData(cityName);
+        return scraper.getCityData(cityName.toLowerCase());
     }
 
 }
