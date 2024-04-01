@@ -8,7 +8,7 @@ The API isn't available online so you will need to run it locally. For that you 
 Download the "pollen-api-0.0.1-SNAPSHOT.jar" file, located inside "pollen-api" folder, and run it. To run it using cmd, inside cmd navigate to the folder where you saved the file using the command "cd folderpath".
 After that type the command "java -jar pollen-api-0.0.1-SNAPSHOT.jar". To close the application inside cmd press ctrl+c.
 
-You can also run the jar file by simply opening the file but then you will need to close it using task manager.
+You can also run the jar file simply by opening the file but then you will need to close it using task manager.
 
 ## Usage
 The API runs on port 8080 so to access it you will need to type in the url "http://localhost:8080" into your internet browser.
