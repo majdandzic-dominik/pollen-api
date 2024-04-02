@@ -1,5 +1,5 @@
 # pollen-api
-Spring boot REST API for Croatian pollen forecast
+Spring boot REST API for Croatian pollen forecast.
 
 
 ## How to run
